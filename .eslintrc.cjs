@@ -1,6 +1,10 @@
 module.exports = {
   root: true,
-  env: { browser: true, es2020: true },
+  env: {
+    browser: true,
+    es2021: true,
+    node: true // Добавьте эту строку для поддержки Node.js
+  },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',

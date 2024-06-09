@@ -1,0 +1,61 @@
+/* Teatments.module.css */
+
+.tabs {
+    display: flow;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #977676; /* Фон для контейнера вкладок */
+}
+
+.tabButton {
+    padding: 10px 20px;
+    border: none;
+    background-color: #977676;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.tabButton.active {
+    background-color: #ecbda1;
+    font-weight: normal;
+    color: white;
+}
+
+.tabButton:hover {
+    background-color: #ddd;
+}
+
+.tabContent {
+    display: none;
+}
+
+.tabContent.active {
+    display: block;
+}
+
+.servicesTable {
+    width: 100%;
+    max-width: 800px; /* Фиксированная ширина таблицы */
+    border-collapse: collapse;
+    margin: 0 auto 20px; /* Центрирование таблицы */
+    table-layout: fixed; /* Фиксированное размещение колонок */
+}
+
+.servicesTable td, .servicesTable th {
+    border: 1px solid #977676;
+    padding: 8px;
+    word-wrap: break-word; /* Перенос длинных слов */
+}
+
+.servicesTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+.warning {
+    font-size: 12px;
+    color: #a00;
+    margin-top: 20px;
+    text-align: center;
+}
