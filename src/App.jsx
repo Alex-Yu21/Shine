@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import { useRef } from 'react';
+import { Route, Routes, Link, useLocation } from 'react-router-dom';
+import { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Home from './pages/Home';
 import Treatments from './pages/Treatments';
@@ -21,7 +21,15 @@ const Header = ({ scrollToAboutUs }) => (
             <nav>
                 <ul>
                     <li><Link to="/treatments">Услуги</Link></li>
-                    <li><a onClick={scrollToAboutUs} className="about-us-link">О нас</a></li>
+                    <li>
+                        <Link
+                            to="/#about-us"
+                            className="about-us-link"
+                            onClick={scrollToAboutUs}
+                        >
+                            О нас
+                        </Link>
+                    </li>
                     <li><Link to="/joboffers">Вакансии</Link></li>
                     <button onClick={openContactsPopup}>Записаться</button>
                 </ul>
@@ -51,8 +59,8 @@ const ContactPopup = () => (
     </div>
 );
 
-const AboutUs = () => (
-    <div id="about-us" className="about-us">
+const AboutUs = ({ aboutUsRef }) => (
+    <div id="about-us" ref={aboutUsRef} className="about-us">
         <h1 className="about-us-header">О нас</h1>
         <h2>ЗАБОТИМСЯ О ВАС И ВАШЕМ КОМФОРТЕ</h2>
         <p>
@@ -97,12 +105,19 @@ const Footer = () => (
 
 const App = () => {
     const aboutUsRef = useRef(null);
+    const location = useLocation();
 
     const scrollToAboutUs = () => {
         if (aboutUsRef.current) {
             aboutUsRef.current.scrollIntoView({ behavior: 'smooth' });
         }
     };
+
+    useEffect(() => {
+        if (location.hash === '#about-us' && aboutUsRef.current) {
+            aboutUsRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [location]);
 
     return (
         <div>

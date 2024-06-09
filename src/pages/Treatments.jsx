@@ -1,6 +1,6 @@
 // src/components/Treatments.jsx
 import { useState, useEffect } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import styles from './Treatments.module.css';
 
 const treatmentsData = [
