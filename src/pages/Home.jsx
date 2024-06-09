@@ -40,7 +40,7 @@ const services = [
 const Carousel = () => (
     <BootstrapCarousel>
         {promotions.map((promo, index) => (
-            <BootstrapCarousel.Item key={index} className={index === 0 ? "active" : ""}>
+            <BootstrapCarousel.Item key={index}>
                 <img className="d-block w-100" src={promo.src} alt={promo.alt} />
                 <div className={styles["description"]}>
                     <h3>{promo.title}</h3>
