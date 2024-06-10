@@ -1,5 +1,12 @@
 /* Teatments.module.css */
 
+.container {
+    /*width: 2000px; Фиксированная ширина страницы */
+    height: 85vh; /* Высота страницы на полный экран */
+    margin: 0 auto; /* Центрирование контейнера по горизонтали */
+    overflow-y: auto; /* Скролл по вертикали, если контент превышает высоту */
+}
+
 .tabs {
     display: flow;
     justify-content: space-around;
@@ -55,7 +62,7 @@
 
 .warning {
     font-size: 12px;
-    color: #a00;
+    color: #333;
     margin-top: 20px;
     text-align: center;
 }

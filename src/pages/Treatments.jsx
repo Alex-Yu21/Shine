@@ -120,7 +120,7 @@ const Treatments = () => {
     };
 
     return (
-        <main>
+        <main className={styles.container}>
             <div className={styles.tabs}>
                 {treatmentsData.map((category) => (
                     <button
